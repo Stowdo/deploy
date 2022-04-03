@@ -1,0 +1,7 @@
+.env
+/api-lb-data
+/app-lb-data
+/db-data
+/letsencrypt
+/minio-data
+/proxy-data
