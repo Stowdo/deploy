@@ -29,6 +29,9 @@ services:
     depends_on:
       - db
     environment:
+      - MINIO_HOST
+      - MINIO_ACCESS_KEY
+      - MINIO_SECRET_KEY
       - STOWDO_SECRET_KEY
       - STOWDO_ENVIRONMENT
       - STOWDO_DB_HOST
@@ -47,7 +50,7 @@ services:
       - REACT_APP_STOWDO_API_HOST
       - REACT_APP_STOWDO_API_PORT
       - REACT_APP_STOWDO_API_PROTOCOL
-    image: "redbeandock/stowdo-frontend:${STOWDO_VERSION}"
+    image: "redbeandock/stowdo-frontend:${REACT_APP_STOWDO_VERSION}"
     restart: unless-stopped
 
   api_lb:
