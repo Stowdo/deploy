@@ -84,7 +84,10 @@ def main():
     click.echo('Creating data folders...')
 
     for folder in ('db-data', 'letsencrypt', 'minio-data', 'proxy-data'):
-        os.mkdir(folder)
+        try:
+            os.mkdir(folder)
+        except Exception:
+            click.echo(f'Unable to create folder {folder}')
 
     click.echo('Done')
 
